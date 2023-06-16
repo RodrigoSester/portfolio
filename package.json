@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo for my portfolio",
+  "main": "index.js",
+  "author": "Rodrigo Weber Sesterheim",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
