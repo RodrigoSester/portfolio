@@ -1,49 +1,38 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <information-me
+      title="Links"
+      caption="Find me on"
+      icon="mdi-link-variant"
+      :content="content"
+    ></information-me>
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+import { Information } from 'components/models';
+import InformationMe from 'components/InformationMe.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
+  components: { InformationMe },
   setup() {
-    const todos = ref<Todo[]>([
+    const content = new Array<Information>(
       {
         id: 1,
-        content: 'ct1'
+        title: 'GitHub',
+        icon: 'mdi-github',
+        content: 'https://github.com/RodrigoSester'
       },
       {
         id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
+        title: 'LinkedIn',
+        icon: 'mdi-linkedin',
+        content: 'https://www.linkedin.com/in/rodrigo-weber-sesterheim/'
       }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
+    );
+    return { content };
   }
 });
 </script>

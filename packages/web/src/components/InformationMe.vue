@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { ContentExpansionItem } from './models';
+import { Information } from './models';
 
 export default defineComponent({
   name: 'InformationMe',
@@ -48,7 +48,7 @@ export default defineComponent({
     },
 
     content: {
-      type: Array<ContentExpansionItem>,
+      type: Array<Information>,
       required: true
     }
   }
