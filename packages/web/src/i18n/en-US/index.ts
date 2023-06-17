@@ -2,6 +2,12 @@
 // so you can safely delete all default props below
 
 export default {
+  app: {
+    title: 'Weber Portfolio',
+  },
+  common: {
+    'menu': 'Menu',
+  },
   failed: 'Action failed',
   success: 'Action was successful'
 };
