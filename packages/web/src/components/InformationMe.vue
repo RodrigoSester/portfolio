@@ -17,6 +17,9 @@
               <a :href="link.content">
                 {{ link.title }}
               </a>
+              <q-item-section>
+                {{ link.caption }}
+              </q-item-section>
             </div>
           </q-item>
         </q-list>
