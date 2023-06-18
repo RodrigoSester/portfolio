@@ -1,5 +1,5 @@
 <template>
-  <q-card class="card">
+  <q-card class="card self-end">
     <q-card-section>
       <information-me
         :title="$t('common.footer.link')"
@@ -65,6 +65,6 @@ export default defineComponent({
 <style scoped lang="scss">
 .card {
   width: 100%;
-  bottom: 0;
+  height: fit-content;
 }
 </style>
