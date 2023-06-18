@@ -7,6 +7,12 @@ export default {
   },
   common: {
     'menu': 'Menu',
+    footer: {
+      'link': 'Link', 
+      'contact': 'Contact',
+      'findMe': 'Find me on',
+      'contactMe': 'Contact me'
+    }
   },
   failed: 'Action failed',
   success: 'Action was successful'
