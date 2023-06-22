@@ -13,6 +13,7 @@
 
 
 const { configure } = require('quasar/wrappers');
+const path = require('path');
 
 module.exports = configure(function (ctx) {
   return {
@@ -59,6 +60,22 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
+      chainWebpack: chain => {
+        chain.module
+          .rule('i18n-resource')
+            .test(/\.(json5?|ya?ml)$/)
+              .include.add(path.resolve(__dirname, './src/i18n'))
+              .end()
+            .type('javascript/auto')
+            .use('i18n-resource')
+              .loader('@intlify/vue-i18n-loader')
+        chain.module
+          .rule('i18n')
+            .resourceQuery(/blockType=i18n/)
+            .type('javascript/auto')
+            .use('i18n')
+              .loader('@intlify/vue-i18n-loader')
+      }
 
       // transpile: false,
       // publicPath: '/',
@@ -79,7 +96,6 @@ module.exports = configure(function (ctx) {
 
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
-      // chainWebpack (/* chain */) {}
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-devServer
