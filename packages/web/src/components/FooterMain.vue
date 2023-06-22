@@ -1,30 +1,30 @@
 <template>
   <q-card class="card self-end">
     <q-card-section>
-      <information-me
+      <expansion-item
         :title="$t('common.footer.link')"
         :caption="$t('common.footer.findMe')"
         icon="mdi-link-variant"
         :content="links"
-      ></information-me>
-      <information-me
+      ></expansion-item>
+      <expansion-item
         :title="$t('common.footer.contact')"
         :caption="$t('common.footer.contactMe')"
         icon="mdi-account-box"
         :content="contacts"
-      ></information-me>
+      ></expansion-item>
     </q-card-section>
   </q-card>
 </template>
 
 <script lang="ts">
 import { Information } from 'components/models';
-import InformationMe from 'components/InformationMe.vue';
+import ExpansionItem from 'components/ExpansionItem.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'FooterMain',
-  components: { InformationMe },
+  components: { ExpansionItem },
   setup() {
     const links = new Array<Information>(
       {
