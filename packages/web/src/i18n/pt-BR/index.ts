@@ -9,9 +9,9 @@ export default {
     'menu': 'Menu',
     footer: {
       'link': 'Link', 
-      'contact': 'Contact',
-      'findMe': 'Find me on',
-      'contactMe': 'Contact me'
+      'contact': 'Contatos',
+      'findMe': 'Encontre me em',
+      'contactMe': 'Contate me'
     },
     apps: {
       'instagram': 'Instagram',
@@ -20,6 +20,6 @@ export default {
       'linkedin': 'Linkedin'
     }
   },
-  failed: 'Action failed',
-  success: 'Action was successful'
+  failed: 'Ação falhou',
+  success: 'Ação bem sucedida'
 };
