@@ -18,46 +18,45 @@
 </template>
 
 <script lang="ts">
-import { Information } from 'components/models';
 import ExpansionItem from 'components/ExpansionItem.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'FooterMain',
   components: { ExpansionItem },
-  setup() {
-    const links = new Array<Information>(
-      {
-        id: 1,
-        title: 'GitHub',
-        icon: 'mdi-github',
-        content: 'https://github.com/RodrigoSester'
-      },
-      {
-        id: 2,
-        title: 'LinkedIn',
-        icon: 'mdi-linkedin',
-        content: 'https://www.linkedin.com/in/rodrigo-weber-sesterheim/'
-      }
-    );
-
-    const contacts = new Array<Information>(
-      {
-        id: 1,
-        title: 'Email',
-        icon: 'mdi-email',
-        caption: 'rodrigowsesterheim@gmail.com',
-        content: 'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdNCTmlcsljZZtTkppjRxJZMgLlSdljjFCbhbCPBQhMzLJjFBHHscDHqHKSmvgrdkzWQd'
-      },
-      {
-        id: 2,
-        title: 'Instagram',
-        icon: 'mdi-instagram',
-        caption: '@weberses',
-        content: 'https://www.instagram.com/weberses/'
-      }
-    );
-    return { links, contacts };
+  data() {
+    return {
+      links : [
+        {
+          id: 1,
+          title: this.$t('common.apps.github'),
+          icon: 'mdi-github',
+          content: 'https://github.com/RodrigoSester'
+        },
+        {
+          id: 2,
+          title: this.$t('common.apps.linkedin'),
+          icon: 'mdi-linkedin',
+          content: 'https://www.linkedin.com/in/rodrigo-weber-sesterheim/'
+        }
+      ],
+      contacts: [
+        {
+          id: 1,
+          title: this.$t('common.apps.email'),
+          icon: 'mdi-email',
+          caption: 'rodrigowsesterheim@gmail.com',
+          content: 'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdNCTmlcsljZZtTkppjRxJZMgLlSdljjFCbhbCPBQhMzLJjFBHHscDHqHKSmvgrdkzWQd'
+        },
+        {
+          id: 2,
+          title: this.$t('common.apps.instagram'),
+          icon: 'mdi-instagram',
+          caption: '@weberses',
+          content: 'https://www.instagram.com/weberses/'
+        }
+      ]
+    }
   }
 });
 </script>
