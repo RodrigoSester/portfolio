@@ -1,13 +1,56 @@
 <template>
   <q-page class="row justify-evenly">
-    <div class="q-pa-md q-gutter-md">
-      <div class="row justify-between">
-        <q-parallax src="https://cdn.quasar.dev/img/parallax2.jpg">
+    <div class="q-px-lg q-py-md">
+      <q-card>
+        <q-list separator>
+          <q-item>
+            <q-circular-progress
+              rounded
+              :value="71"
+              size="90px"
+              :thickness="0.2"
+              color="lime"
+              center-color="grey-8"
+              track-color="transparent"
+              class="q-ma-md"
+            />
+            <q-item-label header>
+              <h4>VueJS</h4>
+            </q-item-label>
+            <q-item-section>
+              abc de
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-circular-progress
+              rounded
+              :value="71"
+              size="90px"
+              :thickness="0.2"
+              color="orange"
+              center-color="grey-8"
+              track-color="transparent"
+              class="q-ma-md"
+            />
+            <q-item-label header>
+              <h4>NodeJS</h4>
+            </q-item-label>
+            <q-item-section>
+              abc de
+            </q-item-section>
+          </q-item>
+        </q-list>
+        <div class="col justify-center">
+        </div>
+      </q-card>
+      <!-- <div class="row justify-between">
+        <q-parallax
+        src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBjb2RlfGVufDB8fDB8fHww&w=1000&q=80"
+        :height="200"
+        >
           <h1 class="text-white">Basic</h1>
         </q-parallax>
-      </div>
-    </div>
-    <div class="q-px-lg q-py-md">
+      </div> -->
       <q-timeline layout="loose" color="secondary">
         <q-timeline-entry heading> Experiences </q-timeline-entry>
         <!-- todo: add more experiences and save them in database -->
@@ -79,10 +122,19 @@
 
 <script lang="ts">
 import FooterMain from 'src/components/FooterMain.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { FooterMain },
+  setup() {
+    const scrollInfo = ref({});
+    return {
+      scrollInfo,
+      onScroll(info: object) {
+        scrollInfo.value = info;
+      }
+    }
+  }
 });
 </script>
