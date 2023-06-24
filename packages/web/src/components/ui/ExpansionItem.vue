@@ -1,19 +1,11 @@
 <template>
-  <q-expansion-item
-    :label="title"
-    :caption="caption"
-    :icon="icon"
-  >
+  <q-expansion-item :label="title" :caption="caption" :icon="icon">
     <q-card>
       <q-card-section>
         <q-list>
-          <q-item
-            v-for="link in content"
-            :key="link.id"
-            v-bind="link"
-          >
+          <q-item v-for="link in content" :key="link.id" v-bind="link">
             <div class="row inline self-center">
-              <q-icon :name="link.icon" style="font-size: 24px;" />
+              <q-icon :name="link.icon" style="font-size: 24px" />
               <a :href="link.content">
                 {{ link.title }}
               </a>
@@ -37,26 +29,25 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
 
     caption: {
       type: String,
-      default: ''
+      default: '',
     },
 
     icon: {
       type: String,
-      default: ''
+      default: '',
     },
 
     content: {
       type: Array<Information>,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 });
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

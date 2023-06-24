@@ -6,20 +6,20 @@ export default {
     title: 'Weber Portfolio',
   },
   common: {
-    'menu': 'Menu',
+    menu: 'Menu',
     footer: {
-      'link': 'Link', 
-      'contact': 'Contatos',
-      'findMe': 'Encontre me em',
-      'contactMe': 'Contate me'
+      link: 'Link',
+      contact: 'Contatos',
+      findMe: 'Encontre me em',
+      contactMe: 'Contate me',
     },
     apps: {
-      'instagram': 'Instagram',
-      'email': 'Email',
-      'github': 'Github',
-      'linkedin': 'Linkedin'
-    }
+      instagram: 'Instagram',
+      email: 'Email',
+      github: 'Github',
+      linkedin: 'Linkedin',
+    },
   },
   failed: 'Ação falhou',
-  success: 'Ação bem sucedida'
+  success: 'Ação bem sucedida',
 };

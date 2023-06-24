@@ -26,19 +26,19 @@ export default defineComponent({
   components: { ExpansionItem },
   data() {
     return {
-      links : [
+      links: [
         {
           id: 1,
           title: this.$t('common.apps.github'),
           icon: 'mdi-github',
-          content: 'https://github.com/RodrigoSester'
+          content: 'https://github.com/RodrigoSester',
         },
         {
           id: 2,
           title: this.$t('common.apps.linkedin'),
           icon: 'mdi-linkedin',
-          content: 'https://www.linkedin.com/in/rodrigo-weber-sesterheim/'
-        }
+          content: 'https://www.linkedin.com/in/rodrigo-weber-sesterheim/',
+        },
       ],
       contacts: [
         {
@@ -46,18 +46,19 @@ export default defineComponent({
           title: this.$t('common.apps.email'),
           icon: 'mdi-email',
           caption: 'rodrigowsesterheim@gmail.com',
-          content: 'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdNCTmlcsljZZtTkppjRxJZMgLlSdljjFCbhbCPBQhMzLJjFBHHscDHqHKSmvgrdkzWQd'
+          content:
+            'https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSPFdNCTmlcsljZZtTkppjRxJZMgLlSdljjFCbhbCPBQhMzLJjFBHHscDHqHKSmvgrdkzWQd',
         },
         {
           id: 2,
           title: this.$t('common.apps.instagram'),
           icon: 'mdi-instagram',
           caption: '@weberses',
-          content: 'https://www.instagram.com/weberses/'
-        }
-      ]
-    }
-  }
+          content: 'https://www.instagram.com/weberses/',
+        },
+      ],
+    };
+  },
 });
 </script>
 

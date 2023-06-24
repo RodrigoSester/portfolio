@@ -12,5 +12,5 @@ export interface Information {
   title: string;
   icon: string;
   content: string;
-  caption?: string
+  caption?: string;
 }
