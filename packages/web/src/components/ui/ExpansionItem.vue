@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Information } from './models';
+import { Information } from '../models';
 
 export default defineComponent({
   name: 'InformationMe',
