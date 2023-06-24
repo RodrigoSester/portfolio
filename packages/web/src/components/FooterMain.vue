@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import ExpansionItem from 'components/ExpansionItem.vue';
+import ExpansionItem from 'components/ui/ExpansionItem.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
