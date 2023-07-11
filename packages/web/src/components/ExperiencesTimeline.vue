@@ -1,6 +1,6 @@
 <template>
   <q-timeline layout="loose" color="secondary">
-    <q-timeline-entry heading> Experiences </q-timeline-entry>
+    <q-timeline-entry heading> {{ $t('experiences.title') }} </q-timeline-entry>
     <q-timeline-entry
       v-for="experience in experiences"
       :key="experience.id"
@@ -72,7 +72,7 @@ import { defineComponent, ref } from 'vue';
 
 async function getAllExperiences(): Promise<ExperienceModel[]> {
   const experiences: ExperienceModel[] = await experience.getAll();
-  
+
   return experiences;
 }
 
@@ -81,7 +81,6 @@ export default defineComponent({
   name: 'ExperiencesTimeline',
   async setup() {
     const experiences = ref(await getAllExperiences())
-    console.log(experiences)
     return {
       experiences
     };
