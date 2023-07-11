@@ -22,4 +22,7 @@ export default {
   },
   failed: 'Ação falhou',
   success: 'Ação bem sucedida',
+  experiences: {
+    title: 'Experiências',
+  }
 };
