@@ -16,6 +16,12 @@ const corsOptions: CorsOptions = {
 
 app.use(cors(corsOptions));
 
+app.use(( req, res, next ) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+    next();
+});
+
 app.get('/experiences', async ( req, res ) => {
     const query = `
         SELECT 
@@ -29,7 +35,6 @@ app.get('/experiences', async ( req, res ) => {
     `
 
     pool.query(query, ( err, { rows } ) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).json(rows);
     });
 });
