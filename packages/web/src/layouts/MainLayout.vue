@@ -18,11 +18,10 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header>
-          {{ $t('common.menu') }}
-        </q-item-label>
-      </q-list>
+      <q-tabs vertical align="left" indicator-color="dark" active-bg-color="white">
+        <q-route-tab to="/" label="Home" exact />
+        <q-route-tab to="/certifications" label="Certifications" exact />
+      </q-tabs>
     </q-drawer>
 
     <q-page-container>
