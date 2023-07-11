@@ -1,12 +1,20 @@
 import express, { Request } from 'express';
 import { Pool } from 'pg'
 import  config from './config/config.connection';
+import cors, { CorsOptions } from 'cors';
 
 require('dotenv').config();
 
 const pool = new Pool(config)
 const app = express();
 app.use(express.json())
+
+const corsOptions: CorsOptions = {
+    origin: process.env.API,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 app.get('/experiences', async ( req, res ) => {
     const query = `
@@ -21,6 +29,7 @@ app.get('/experiences', async ( req, res ) => {
     `
 
     pool.query(query, ( err, { rows } ) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).json(rows);
     });
 });
@@ -53,5 +62,5 @@ app.post('/experiences', async ( req: Request, res ) => {
 });
 
 app.listen(process.env.PORT, () => {
-    console.log( `server started at http://localhost:${ process.env.PORT }` );
+    console.log( `server started at ${process.env.API}` );
 });
