@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import Certifications from 'src/components/certificationss/Certifications.vue';
+import Certifications from 'src/components/certifications/CertificationsList.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
