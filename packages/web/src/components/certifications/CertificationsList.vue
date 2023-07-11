@@ -4,7 +4,6 @@
       <q-intersection
         v-for="index in 60"
         :key="index"
-        once
         transition="scale"
         class="example-item"
       >
@@ -26,5 +25,8 @@
 </script>
 
 <style scoped>
-
+.example-item {
+  height: 300px;
+  width: 250px;
+}
 </style>
