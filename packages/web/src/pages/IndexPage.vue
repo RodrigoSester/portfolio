@@ -11,7 +11,9 @@
           <h1 class="text-white">Basic</h1>
         </q-parallax>
       </div> -->
-      <experiences-timeline />
+      <suspense>
+        <experiences-timeline />
+      </suspense>
     </div>
     <footer-main />
   </q-page>
@@ -19,16 +21,16 @@
 
 <script lang="ts">
 import FooterMain from 'src/components/FooterMain.vue';
-import KnowledgeCard from 'src/components/KnowledgeCard.vue'
+import KnowledgeCard from 'src/components/KnowledgeCard.vue';
 import ExperiencesTimeline from 'src/components/ExperiencesTimeline.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { 
+  components: {
     FooterMain,
     KnowledgeCard,
-    ExperiencesTimeline
+    ExperiencesTimeline,
   },
   setup() {
     const scrollInfo = ref({});
@@ -36,8 +38,8 @@ export default defineComponent({
       scrollInfo,
       onScroll(info: object) {
         scrollInfo.value = info;
-      }
-    }
-  }
+      },
+    };
+  },
 });
 </script>

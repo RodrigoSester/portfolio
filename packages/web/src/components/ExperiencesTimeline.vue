@@ -1,28 +1,28 @@
 <template>
   <q-timeline layout="loose" color="secondary">
     <q-timeline-entry heading> Experiences </q-timeline-entry>
-    <!-- todo: add more experiences and save them in database -->
     <q-timeline-entry
-      title="Full Stack Developer"
-      subtitle="February 21, 1986"
+      v-for="experience in experiences"
+      :key="experience.id"
+      :title="experience.title"
+      :subtitle="experience.date"
       color="primary"
       side="left"
       :icon="'mdi-bed-clock'"
     >
       <div>
-        Actually working as a Full Stack Developer at +A Educação, working
-        with Vue.js, Quasar Framework, Node.js, Express.js, Git, Azure.
+        {{ experience.description }}
       </div>
     </q-timeline-entry>
 
-    <q-timeline-entry
+    <!-- <q-timeline-entry
       title="Estágio +A Educação"
       subtitle="February 22, 1986"
       color="red"
     >
       <div>
-        Moment that I evolved a lot as a person and as a professional, I
-        learned how to work in groups, how to be a better professional
+        Moment that I evolved a lot as a person and as a professional, I learned
+        how to work in groups, how to be a better professional
       </div>
     </q-timeline-entry>
 
@@ -33,8 +33,8 @@
       side="left"
     >
       <div>
-        Worked as a Backend Developer, where I learned and have my first
-        contact with PHP, MySQL.
+        Worked as a Backend Developer, where I learned and have my first contact
+        with PHP, MySQL.
       </div>
     </q-timeline-entry>
 
@@ -58,17 +58,35 @@
       side="left"
     >
       <div>
-        I studied at Colégio Maria Auxiliadora, where I learned a lot about
-        life and how to be a better person.
+        I studied at Colégio Maria Auxiliadora, where I learned a lot about life
+        and how to be a better person.
       </div>
-    </q-timeline-entry>
+    </q-timeline-entry> -->
   </q-timeline>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import experience from 'src/services/experience';
+import ExperienceModel from 'src/components/models/ExperienceModel';
+import { defineComponent, ref } from 'vue';
 
+async function getAllExperiences(): Promise<ExperienceModel[]> {
+  const experiences: ExperienceModel[] = await experience.getAll();
+  
+  return experiences;
+}
+
+
+export default defineComponent({
+  name: 'ExperiencesTimeline',
+  async setup() {
+    const experiences = ref(await getAllExperiences())
+    console.log(experiences)
+    return {
+      experiences
+    };
+  }
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
